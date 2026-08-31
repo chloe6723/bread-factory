@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background); --color-foreground: var(--foreground);
+  --color-card: var(--card); --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover); --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary); --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent); --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive); --color-border: var(--border);
+  --color-input: var(--input); --color-ring: var(--ring);
+  --font-sans: var(--font-geist-sans); --font-mono: var(--font-geist-mono); --font-heading: var(--font-geist-sans);
+  --radius-sm: calc(var(--radius) * .6); --radius-md: calc(var(--radius) * .8); --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4); --radius-2xl: calc(var(--radius) * 1.8); --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+:root {
+  --background: oklch(.973 .014 80); --foreground: oklch(.25 .03 55);
+  --card: oklch(.995 .007 80); --card-foreground: oklch(.25 .03 55);
+  --popover: oklch(.995 .007 80); --popover-foreground: oklch(.25 .03 55);
+  --primary: oklch(.47 .105 47); --primary-foreground: oklch(.98 .016 80);
+  --secondary: oklch(.91 .048 77); --secondary-foreground: oklch(.33 .055 52);
+  --muted: oklch(.935 .023 80); --muted-foreground: oklch(.53 .025 61);
+  --accent: oklch(.89 .067 115); --accent-foreground: oklch(.31 .06 105);
+  --destructive: oklch(.58 .2 28); --border: oklch(.88 .029 72); --input: oklch(.88 .029 72);
+  --ring: oklch(.57 .11 50); --radius: .85rem;
+}
+
+.dark {
+  --background: oklch(.2 .025 55); --foreground: oklch(.96 .018 78);
+  --card: oklch(.25 .027 55); --card-foreground: oklch(.96 .018 78);
+  --popover: oklch(.25 .027 55); --popover-foreground: oklch(.96 .018 78);
+  --primary: oklch(.75 .11 68); --primary-foreground: oklch(.22 .032 53);
+  --secondary: oklch(.32 .04 58); --secondary-foreground: oklch(.95 .02 77);
+  --muted: oklch(.29 .025 57); --muted-foreground: oklch(.72 .026 70);
+  --accent: oklch(.39 .07 105); --accent-foreground: oklch(.95 .025 95);
+  --destructive: oklch(.7 .18 25); --border: oklch(1 0 0 / 12%); --input: oklch(1 0 0 / 15%); --ring: oklch(.71 .1 64);
+}
+
+@layer base { * { @apply border-border outline-ring/50; } html { @apply font-sans; } body { @apply bg-background text-foreground; } button { cursor: pointer; } }
+
+.bread-card { background: radial-gradient(circle at 88% 18%, rgb(255 224 167 / 18%) 0 13%, transparent 14%), linear-gradient(145deg, #7a4325 0%, #4d2919 72%); }
+.loaf-mark { display:grid; place-items:center; width:74px; aspect-ratio:1; border-radius:24px; background:rgb(255 255 255 / 9%); font-size:42px; transform:rotate(4deg); }
