@@ -52,6 +52,13 @@
   to { opacity: 1; transform: scale(1); filter: saturate(1); }
 }
 
+@keyframes field-breathe {
+  0%, 100% { transform: scaleX(.18); transform-origin: left; opacity: .55; }
+  50% { transform: scaleX(1); transform-origin: left; opacity: 1; }
+}
+
+.field-breathe { animation: field-breathe 4.5s ease-in-out infinite; }
+
 .loading-frame { animation: gentle-arrive .55s ease-out both; }
 .map-pin { animation: gentle-arrive .5s ease-out both; }
 
@@ -63,5 +70,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .loading-frame, .map-pin { animation: none; }
+  .loading-frame, .map-pin, .field-breathe { animation: none; }
 }
