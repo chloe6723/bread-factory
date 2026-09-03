@@ -2,44 +2,16 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+const sans = Geist({ variable: '--font-sans', subsets: ['latin'] });
+const mono = Geist_Mono({ variable: '--font-mono', subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '面包时钟｜你的智能烘焙车间',
-  description: '从食谱、备料到分步计时与作品记录，陪你轻松完成每一次烘焙。',
-  openGraph: {
-    title: '面包时钟',
-    description: '你的智能烘焙车间',
-    images: ['/og.png'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: '面包时钟',
-    description: '你的智能烘焙车间',
-    images: ['/og.png'],
-  },
+  title: '麦麦面包房｜功能骨架 v0.3',
+  description: '从面包美食家，到甜品师，再到面包房主理人的暖心面包生活。',
+  openGraph: { title: '麦麦面包房', description: '记录今天吃了什么，也经营自己的梦幻面包房。', images: ['/og.png'] },
+  twitter: { card: 'summary_large_image', title: '麦麦面包房', description: '一间会慢慢长大的暖心面包房。', images: ['/og.png'] },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="zh-CN">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="zh-CN"><body className={`${sans.variable} ${mono.variable}`}>{children}</body></html>;
 }
